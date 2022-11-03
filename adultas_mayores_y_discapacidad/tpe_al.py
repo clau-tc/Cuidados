@@ -4,13 +4,13 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from fun_procesamiento import *
 
-os.chdir('/home/clautc/Proyectos_/cuidados/adultas_mayores_y_discapcidad')
+os.chdir('/adultas_mayores_y_discapacidad')
 
 # 1) Obtención data
 
 archivo = 'tpALC_jdgo'
 name_sheet = 'datos_planos'
-with open('/home/clautc/Proyectos_/cuidados/adultas_mayores_y_discapcidad/keys/keys.txt') as k:
+with open('/adultas_mayores_y_discapacidad/keys/keys.txt') as k:
     keys = k.readline()
 data = obtener_data_google_sheet(name_archivo=archivo, name_sheet=name_sheet, keys=keys)
 
