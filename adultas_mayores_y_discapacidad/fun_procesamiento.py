@@ -17,7 +17,21 @@ def obtener_data_google_sheet(name_archivo, name_sheet, keys):
     return data
 
 
+def dot_none_comma_to_dot(df, var):
+    df = df.copy()
+    if len(var) == 1:
+        df[var] = df[var].str.replace('\.', '', regex=True).str.replace(',', '.')
+        df[var] = df[var].astype('float')
+        return df[var]
+    elif len(var) > 1:
+        for v in var:
+            df[var] = df[var].str.replace('\.', '', regex=True).str.replace(',', '.')
+            df[var] = df[var].astype('float')
+            return df[var]
+
+
 def comma_to_dot(df, var):
+    df = df.copy()
     df[var] = df[var].replace('\,', '.', regex=True)
     df[var] = df[var].astype('float')
     return df[var]
