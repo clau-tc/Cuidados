@@ -22,12 +22,12 @@ def dot_none_comma_to_dot(df, var):
     if len(var) == 1:
         df[var] = df[var].str.replace('\.', '', regex=True).str.replace(',', '.')
         df[var] = df[var].astype('float')
-        return df[var]
+        return df
     elif len(var) > 1:
         for v in var:
             df[var] = df[var].str.replace('\.', '', regex=True).str.replace(',', '.')
             df[var] = df[var].astype('float')
-            return df[var]
+        return df
 
 
 def comma_to_dot(df, var):
